@@ -1,0 +1,276 @@
+/* --- Pengaturan Global & Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primary: #1e88e5;       /* Biru Cerah */
+    --color-accent: #ffb300;        /* Kuning Energi */
+    --color-dark: #212121;          /* Teks Hitam Pekat */
+    --color-light: #f5f5f5;         /* Latar Belakang */
+    --color-green: #43a047;         /* Hijau Alam */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+/* --- Navigasi (Sticky) --- */
+.sticky-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Membuat Navigasi selalu terlihat saat scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--color-primary);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-dark);
+    margin-left: 25px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+.btn-join {
+    background-color: var(--color-accent);
+    color: var(--color-dark) !important;
+    padding: 8px 18px;
+    border-radius: 5px;
+    margin-left: 30px;
+    font-weight: 700;
+}
+
+/* --- BAGIAN HERO DENGAN PARALLAX --- */
+.hero-parallax {
+    /* Gambar background */
+    background-image: url('https://source.unsplash.com/random/1600x900?running,sunrise,mountain');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* KUNCI EFEK PARALLAX! */
+    height: 70vh; /* Tinggi layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.4); /* Overlay gelap agar teks terbaca */
+    padding: 3rem;
+    color: white;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.hero-parallax h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+
+.hero-parallax p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-action {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-action:hover {
+    background-color: #ffd64e;
+    transform: scale(1.05);
+}
+
+/* --- BAGIAN PILAR (Pilar Ajakan) --- */
+.pilar-section {
+    padding: 4rem 5%;
+    text-align: center;
+    background-color: white;
+}
+
+.pilar-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: var(--color-primary);
+    font-weight: 900;
+}
+
+.pilar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.pilar-card {
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.pilar-card i {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.pilar-card h3 {
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--color-dark);
+}
+
+/* Warna unik untuk setiap pilar */
+.pilar-card.mindset { border-bottom: 5px solid var(--color-primary); }
+.pilar-card.mindset i { color: var(--color-primary); }
+
+.pilar-card.movement { border-bottom: 5px solid var(--color-green); }
+.pilar-card.movement i { color: var(--color-green); }
+
+.pilar-card.fuel { border-bottom: 5px solid var(--color-accent); }
+.pilar-card.fuel i { color: var(--color-accent); }
+
+.pilar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* --- BAGIAN CTA TANTANGAN (Paling Menonjol) --- */
+.challenge-cta {
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 5rem 5%;
+    margin: 4rem 0;
+}
+
+.cta-content i {
+    font-size: 3rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.cta-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+
+.btn-primary-large {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    padding: 18px 40px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary-large:hover {
+    background-color: #ffd64e;
+    transform: scale(1.05);
+}
+
+/* --- BAGIAN TESTIMONI --- */
+.testi-section {
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.testi-section h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--color-dark);
+    font-weight: 700;
+}
+
+.testi-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 450px;
+    text-align: left;
+    border-left: 5px solid var(--color-green);
+}
+
+.testimonial p {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial footer {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--color-dark);
+    color: #bdbdbd;
+    text-align: center;
+    padding: 2rem 5%;
+    margin-top: 4rem;
+}
+
+/* --- Responsif Sederhana --- */
+@media (max-width: 768px) {
+    .sticky-nav {
+        flex-direction: column;
+    }
+    .nav-links {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-links a {
+        margin: 5px 10px;
+    }
+    .hero-parallax h1 {
+        font-size: 2.5rem;
+    }
+    .hero-overlay {
+        padding: 2rem;
+    }
+}
